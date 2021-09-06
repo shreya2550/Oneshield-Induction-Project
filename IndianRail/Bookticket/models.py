@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 
@@ -37,7 +36,7 @@ class Customer(models.Model):
     Age = models.IntegerField()
     Time_of_registration = models.DateTimeField(auto_now_add=True)
     Phone = models.CharField(max_length=13)
-    Password = models.CharField(max_length=30)
+    Password = models.CharField(max_length=500)
 
 
 class Passenger(models.Model):

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Customer
-
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 
 
@@ -33,7 +33,7 @@ def register(request):
             post.Email = request.POST.get('email')
             post.Age = request.POST.get('age')
             post.Phone = request.POST.get('phone')
-            post.Password = request.POST.get('password')
+            post.Password = make_password(request.POST.get('password'))
             post.save()
             return render(request, 'login.html')
         else:
