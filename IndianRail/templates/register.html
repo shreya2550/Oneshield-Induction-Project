@@ -84,7 +84,8 @@
         <button class="childb" style="margin-left:100px;margin-top:50px;z-index:99" id="show">v</button>
         <button class="childhide" style="margin-left:100px;margin-top:50px;z-index:99" id="hide">^</button>
 
-<form >
+<form  method="POST" action="" autocomplete="off">
+    {% csrf_token %}
     <div style="Background-color:#e3e3e3;width:500px;margin-top:50px;margin-left:30%;border-radius:10px;z-index:999">
         <p style="background-color:black;color:white;text-align:center;border-radius:10px;"><b>REGISTER FORM</b>
 </p>
@@ -92,16 +93,16 @@
         <div class="bookall">
 
     <label for="name">Name:</label>
-    <input style="margin-left:90px;border-radius:5px;border:1px solid white;width:280px;" type="text" placeholder="Enter Name"></input><br>
+    <input style="margin-left:90px;border-radius:5px;border:1px solid white;width:280px;" type="text" placeholder="Enter Name" name="name"></input><br>
 
     <label for="email">Email:</label>
-    <input style="margin-left:94px;border-radius:5px;border:1px solid white;width:280px;"type="email" placeholder="Enter Email"></input><br>
-    <label for="DOB">Age:</label>
-    <input style="margin-left:105px;border-radius:5px;border:1px solid white;width:280px;" min="0" max="150" type="number" placeholder="Enter Age"></input><br>
+    <input style="margin-left:94px;border-radius:5px;border:1px solid white;width:280px;"type="email" placeholder="Enter Email" name="email"></input><br>
+    <label for="age">Age:</label>
+    <input style="margin-left:105px;border-radius:5px;border:1px solid white;width:280px;" min="0" max="150" type="number" placeholder="Enter Age" name="age"></input><br>
     <label for="Phone">Phone:</label>
-    <input style="margin-left:86px;border-radius:5px;border:1px solid white;width:280px;" pattern="[6-9]{1}[0-9]{9}" type="tel" placeholder="Enter Phone"></input><br>
+    <input style="margin-left:86px;border-radius:5px;border:1px solid white;width:280px;" pattern="[6-9]{1}[0-9]{9}" type="tel" placeholder="Enter Phone" name="phone"></input><br>
     <label for="Password">Password:</label>
-    <input id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="margin-left:63px;border-radius:5px;border:1px solid white;width:280px;" type="password"  name="pass" placeholder="Enter Password"></input><br>
+    <input id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="margin-left:63px;border-radius:5px;border:1px solid white;width:280px;" type="password"   placeholder="Enter Password" name="password"></input><br>
     <label for="Re-Password">Re-Password:</label>
     <input id="confirm_password" style="margin-left:39px;border-radius:5px;border:1px solid white;width:280px;" name="pass" type="password" placeholder="Enter Re-Password"></input><br>
     <span id='message'></span>

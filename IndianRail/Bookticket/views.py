@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Customer
 
 # Create your views here.
 
@@ -25,7 +26,21 @@ def login(request):
 
 
 def register(request):
-    return render(request, 'register.html')
+    if request.method == 'POST':
+        if request.POST.get('name') and request.POST.get('email') and request.POST.get('age') and request.POST.get('phone') and request.POST.get('password'):
+            post = Customer()
+            post.Name = request.POST.get('name')
+            post.Email = request.POST.get('email')
+            post.Age = request.POST.get('age')
+            post.Phone = request.POST.get('phone')
+            post.Password = request.POST.get('password')
+            post.save()
+            return render(request, 'login.html')
+        else:
+            return render(request, 'register.html')
+    else:
+        return render(request, 'register.html')
+
 
 
 def myticket(request):
