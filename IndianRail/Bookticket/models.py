@@ -44,7 +44,7 @@ class Passenger(models.Model):
     Email = models.ForeignKey(Customer, on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
     Age = models.IntegerField()
-    Dare_of_booking = models.DateTimeField(auto_now_add=True)
+    Date_of_booking = models.DateTimeField(auto_now_add=True)
     On_boarding_Date = models.DateField()
     Aadhar = models.CharField(max_length=12)
     Phone = models.CharField(max_length=13)
